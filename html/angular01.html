@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp" >
+	<head>
+		<meta charset="utf-8"/>
+		<title>测试AngularJS</title>
+		<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-init="firstName='Jhone'">
+			<span ng-bind="firstName"/>
+		</div>		
+		<h2>测试AngularJS的表达式</h2>
+		<p>这是我的第一个Angular表达式 {{5+'ddd'}} </p>
+		<div ng-controller="myclt1">
+			姓：<input ng-model="firstName" /><br />
+			名：<input ng-model="secondName" /><br />
+			姓名：{{firstName}} + {{secondName}}
+			<input ng-model="firstName" />
+		</div>
+		<div ng-init="num1=12;num2=14">
+			<input ng-model="firstName" />
+			<p>AngularJS表达式：{{ num1 * num2 }}</p>
+		</div>
+		<div >
+			<span ng-bind="num1 * num2"></span>
+		</div>
+		<div ng-init="person={firstName:'zhangsan',secondName:'lisi'}">
+			AngularJS对象 {{person.firstName}}			
+		</div>
+		<div ng-init="arry=[1,2,3,4,5]">
+			AngularJS数组 {{arry[2]}}
+		</div>
+	</body>
+	<script type="text/javascript" charset="UTF-8">
+		var app = angular.module('myApp',[]);
+		app.controller('myclt1',function($scope){
+			$scope.firstName = '张三';
+			$scope.secondName = '李四';
+		});
+	</script>
+</html>
